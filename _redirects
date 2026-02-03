@@ -1,0 +1,6 @@
+# Force HTTPS
+http://anarchyxmayhem.com/* https://www.anarchyxmayhem.com/:splat 301!
+http://www.anarchyxmayhem.com/* https://www.anarchyxmayhem.com/:splat 301!
+
+# Explicit 404 handling
+/* /404.html 404
