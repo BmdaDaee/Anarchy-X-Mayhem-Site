@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Blog | Anarchy X Mayhem</title>
+  <title>Blog | Anarchy X Mayhem</title>
 
-    <meta name="description" content="Insights, guides, and practical breakdowns from AXM — covering tech, home systems, automation, travel, and modern operations." />
-    <link rel="canonical" href="https://www.anarchyxmayhem.com/blog.html" />
+  <!-- SEO -->
+  <meta name="description" content="Field notes, breakdowns, and practical lessons from the AXM workflow." />
+  <meta name="robots" content="index,follow" />
 
-    <meta property="og:title" content="Blog | Anarchy X Mayhem" />
-    <meta property="og:description" content="Practical insights and real-world systems thinking from AXM." />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.anarchyxmayhem.com/blog.html" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog | Anarchy X Mayhem" />
+  <meta property="og:description" content="Field notes, breakdowns, and practical lessons from the AXM workflow." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.anarchyxmayhem.com/blog.html" />
+  <meta property="og:image" content="https://www.anarchyxmayhem.com/assets/og/og-default.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog | Anarchy X Mayhem" />
+  <meta name="twitter:description" content="Field notes, breakdowns, and practical lessons from the AXM workflow." />
+  <meta name="twitter:image" content="https://www.anarchyxmayhem.com/assets/og/og-default.png" />
+
+  <!-- Fonts (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
+<!-- SHARED NAV -->
 <header class="axm-header">
-    <nav class="axm-nav">
-        <div class="axm-logo">
-            <span class="axm-word">Anarchy</span>
-            <span class="axm-x">X</span>
-            <span class="axm-word">Mayhem</span>
-        </div>
+  <nav class="axm-nav">
+    <div class="axm-logo" aria-label="Anarchy X Mayhem">
+      <span class="axm-word">Anarchy</span>
+      <span class="axm-x">X</span>
+      <span class="axm-word">Mayhem</span>
+    </div>
 
-        <button class="axm-mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    <button class="axm-mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
 
-        <ul class="axm-nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <ul class="axm-nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
 <section class="axm-section">
@@ -68,15 +87,17 @@
     </div>
 </section>
 
+<!-- SHARED FOOTER -->
 <footer class="axm-footer">
-    <div class="axm-footer-inner">
-        <div class="axm-footer-brand">
-            <span class="axm-word">Anarchy</span>
-            <span class="axm-x">X</span>
-            <span class="axm-word">Mayhem</span>
-        </div>
-        <p class="axm-footer-copy">© 2026 Anarchy X Mayhem, LLC. All rights reserved.</p>
+  <div class="axm-footer-inner">
+    <div class="axm-footer-brand" aria-label="Anarchy X Mayhem">
+      <span class="axm-word">Anarchy</span>
+      <span class="axm-x">X</span>
+      <span class="axm-word">Mayhem</span>
     </div>
+
+    <p class="axm-footer-copy">© 2026 Anarchy X Mayhem, LLC. All rights reserved.</p>
+  </div>
 </footer>
 
 <script src="js/main.js"></script>

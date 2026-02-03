@@ -10,6 +10,20 @@
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.getElementById('navLinks');
 
+// Highlight current page in the shared nav (no manual "active" classes needed)
+(function setActiveNavLink() {
+    if (!navLinks) return;
+    const current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const links = navLinks.querySelectorAll('a[href]');
+    links.forEach(a => {
+        const href = (a.getAttribute('href') || '').toLowerCase();
+        if (!href) return;
+        // Exact match, plus a small safety: treat empty/"/" as index
+        const isActive = href === current || (current === '' && href === 'index.html');
+        a.classList.toggle('active', isActive);
+    });
+})();
+
 if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('open');
