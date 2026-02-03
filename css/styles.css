@@ -1,0 +1,730 @@
+/* =========================================
+   ROOT VARIABLES — AXM SIGNATURE SYSTEM
+========================================= */
+:root {
+    /* Core Colors */
+    --axm-charcoal: #0f0f12;
+    --axm-charcoal-light: #1a1b20;
+    --axm-platinum: #e6e7ec;
+    --axm-platinum-soft: #f2f3f7;
+
+    /* Brand Colors */
+    --axm-violet: #7a3cff;        /* Mayhem Violet */
+    --axm-red: #ff2b2b;           /* Anarchy Red — reserved */
+
+    /* Typography */
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Atkinson Hyperlegible', sans-serif;
+
+    /* Sizing */
+    --max-width: 1200px;
+    --section-padding: 6rem;
+
+    /* Motion */
+    --transition-fast: 0.2s ease;
+    --transition-med: 0.35s ease;
+}
+
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: var(--axm-charcoal);
+    color: var(--axm-platinum);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+img, video {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* =========================================
+   TYPOGRAPHY BASE
+========================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--axm-platinum);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--axm-platinum-soft);
+}
+
+
+/* =========================================
+   LAYOUT CONTAINERS
+========================================= */
+.axm-section {
+    padding: var(--section-padding) 1.5rem;
+}
+/* Utility helpers */
+.axm-center { text-align: center; }
+
+/* Active nav link */
+.axm-nav-links a.active {
+    opacity: 1;
+    color: var(--axm-violet);
+}
+/* Support: sometimes the active class is applied directly */
+a.active {
+    opacity: 1;
+    color: var(--axm-violet);
+}
+.axm-section-header {
+    max-width: var(--max-width);
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.axm-section-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.axm-section-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+.axm-section > * {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================
+   BUTTONS — BASE
+========================================= */
+.axm-btn-primary,
+.axm-btn-secondary {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: background var(--transition-med), color var(--transition-med);
+}
+
+/* Primary = Anarchy Red (reserved for CTAs) */
+.axm-btn-primary {
+    background: var(--axm-red);
+    color: #fff;
+}
+
+.axm-btn-primary:hover {
+    background: #ff4a4a;
+}
+
+/* Secondary = Mayhem Violet outline */
+.axm-btn-secondary {
+    border: 2px solid var(--axm-violet);
+    color: var(--axm-violet);
+}
+
+.axm-btn-secondary:hover {
+    background: var(--axm-violet);
+    color: #fff;
+}
+/* =========================================
+   HEADER + NAVIGATION
+========================================= */
+.axm-header {
+    width: 100%;
+    background: var(--axm-charcoal-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.axm-nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.axm-logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.axm-logo .axm-word {
+    color: var(--axm-platinum);
+}
+
+.axm-logo .axm-x {
+    color: var(--axm-red);
+}
+
+/* Desktop Nav Links */
+.axm-nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.axm-nav-links a {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    opacity: 0.85;
+    transition: opacity var(--transition-fast);
+}
+
+.axm-nav-links a:hover {
+    opacity: 1;
+}
+
+/* Mobile Menu Button */
+.axm-mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--axm-platinum);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.axm-hero {
+    padding: 8rem 1.5rem 6rem;
+    background: var(--axm-charcoal);
+    text-align: center;
+    position: relative;
+}
+
+/* Subtle anime-style panel line */
+.axm-hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--axm-violet),
+        transparent
+    );
+    transform: translateX(-50%);
+    opacity: 0.4;
+}
+
+.axm-hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Brand Title */
+.axm-hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.axm-hero-title .axm-x {
+    color: var(--axm-red);
+}
+
+/* Primary Tagline */
+.axm-hero-tagline-primary {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--axm-platinum-soft);
+}
+
+/* Rotating Secondary Tagline Container */
+.axm-hero-tagline-rotator {
+    height: 1.4rem; /* keeps layout stable during rotation */
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Each line */
+.axm-hero-tagline-secondary {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity var(--transition-med),
+        transform var(--transition-med);
+    color: var(--axm-platinum-soft);
+    font-size: 1rem;
+}
+
+/* Active line (JS will toggle this class) */
+.axm-hero-tagline-secondary.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CTA Buttons */
+.axm-hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+/* =========================================
+   SERVICES SECTION
+========================================= */
+.axm-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.axm-service-card {
+    background: var(--axm-charcoal-light);
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-med), border var(--transition-med);
+}
+
+.axm-service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--axm-violet);
+}
+
+.axm-service-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.axm-service-desc {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.axm-service-link {
+    font-family: var(--font-heading);
+    color: var(--axm-violet);
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+}
+
+.axm-service-link:hover {
+    color: #a57aff;
+}
+
+
+
+/* =========================================
+   PRODUCTS / KITS SECTION
+========================================= */
+.axm-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.axm-product-card {
+    background: var(--axm-charcoal-light);
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-med), border var(--transition-med);
+}
+
+.axm-product-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--axm-violet);
+}
+
+.axm-product-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.axm-product-desc {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.axm-product-link {
+    font-family: var(--font-heading);
+    color: var(--axm-violet);
+    font-size: 0.95rem;
+}
+
+.axm-product-link:hover {
+    color: #a57aff;
+}
+
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+.axm-about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
+.axm-about-content p + p {
+    margin-top: 1.5rem;
+}
+
+
+
+/* =========================================
+   FORMS (BOOKING + CONTACT)
+========================================= */
+.axm-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--axm-charcoal-light);
+    padding: 2.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.axm-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.axm-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+}
+
+.axm-form-group input,
+.axm-form-group textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #14151a;
+    color: var(--axm-platinum);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border var(--transition-fast);
+}
+
+.axm-form-group input:focus,
+.axm-form-group textarea:focus {
+    border-color: var(--axm-violet);
+    outline: none;
+}
+
+/* Form Mode Selector */
+.axm-form-mode {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+}
+
+.axm-form-mode label {
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.axm-form-success {
+    margin-top: 1.5rem;
+    color: var(--axm-violet);
+    font-family: var(--font-heading);
+    display: none;
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+.axm-footer {
+    padding: 3rem 1.5rem;
+    background: var(--axm-charcoal-light);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.axm-footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.axm-footer-brand {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.axm-footer-brand .axm-x {
+    color: var(--axm-red);
+}
+
+.axm-footer-copy {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+
+
+/* =========================================
+   CHAT WIDGET
+========================================= */
+.axm-chat-widget {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 2000;
+}
+
+/* Chat Button */
+.axm-chat-button {
+    background: var(--axm-violet);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 1.4rem;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.axm-chat-button:hover {
+    background: #9b6aff;
+}
+
+/* Chat Window */
+.axm-chat-window {
+    width: 300px;
+    background: var(--axm-charcoal-light);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.axm-chat-header {
+    background: var(--axm-violet);
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-family: var(--font-heading);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.axm-chat-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.axm-chat-body {
+    padding: 1rem;
+    height: 200px;
+    overflow-y: auto;
+    font-size: 0.95rem;
+}
+
+.axm-chat-input-wrap {
+    padding: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#chatInput {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #14151a;
+    color: var(--axm-platinum);
+    font-family: var(--font-body);
+}
+/* =========================================
+   MICRO‑INTERACTIONS & POLISH
+========================================= */
+
+/* Soft glow on hover for cards */
+.axm-service-card:hover,
+.axm-product-card:hover {
+    box-shadow: 0 0 12px rgba(122, 60, 255, 0.25);
+}
+
+/* Section header subtle underline accent */
+.axm-section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.axm-section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 60px;
+    height: 2px;
+    background: var(--axm-violet);
+    transform: translateX(-50%);
+    opacity: 0.7;
+}
+
+/* Anime‑style micro panel lines on cards */
+.axm-service-card::before,
+.axm-product-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 1px;
+    background: linear-gradient(to right, var(--axm-violet), transparent);
+    opacity: 0.25;
+}
+
+.axm-service-card::after,
+.axm-product-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    height: 1px;
+    background: linear-gradient(to left, var(--axm-violet), transparent);
+    opacity: 0.25;
+}
+
+.axm-service-card,
+.axm-product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TAGLINE ROTATOR — POLISH
+========================================= */
+
+.axm-hero-tagline-secondary {
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+.axm-hero-tagline-secondary.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+========================================= */
+
+/* Medium screens */
+@media (max-width: 900px) {
+    .axm-hero-title {
+        font-size: 3rem;
+    }
+
+    .axm-section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 700px) {
+
+    /* Mobile nav */
+    .axm-nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--axm-charcoal-light);
+        flex-direction: column;
+        width: 200px;
+        padding: 1rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: none;
+    }
+
+    .axm-nav-links.open {
+        display: flex;
+    }
+
+    .axm-mobile-menu-btn {
+        display: block;
+    }
+
+    /* Hero */
+    .axm-hero-title {
+        font-size: 2.6rem;
+    }
+
+    .axm-hero-tagline-primary {
+        font-size: 1.15rem;
+    }
+
+    .axm-hero-tagline-rotator {
+        height: 1.6rem;
+    }
+
+    .axm-hero-cta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* Forms */
+    .axm-form {
+        padding: 1.8rem;
+    }
+
+    /* Chat widget */
+    .axm-chat-window {
+        width: 260px;
+    }
+}
